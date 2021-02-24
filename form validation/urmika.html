@@ -1,0 +1,241 @@
+<html>
+    <head>
+        <title>Insurance Registration Form</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+      <div class="mainHead">
+        <h1>Insurance Registration Form</h1>
+      </div>
+        <div class="content">
+            <form id="myForm" action="#" onsubmit="return formValidate()">
+            <div>
+                <label>First Name</label><br/>
+                <input type="text" id="fname" value="" placeholder="Enter first name"><br/>
+                <span id="fspan"></span>
+            </div>
+            <br />
+            <div>
+                <label>Last Name</label><br/>
+                <input type="text" id="lname" value="" placeholder="Enter last name"><br/>
+                <span id="lspan"></span>
+            </div>
+            <br />
+            <div>
+                <label>Email</label><br/>
+                <input type="text" id="email" value="" placeholder="Enter email id"><br/>
+                <span id="espan"></span>
+            </div>
+            <br />
+           <div>
+            <label>Phone Number</label><br/>
+            <input type="text" id="phone" value="" placeholder="Enter phone number"><br/>
+            <span id="pnspan"></span>
+           </div>
+           <br />
+           <div>
+            <label>Password</label><br/>
+            <input type="password" id="pass" value="" placeholder="Enter password"><br/>
+            <span id="pspan"></span>
+           </div>
+           <br />
+           <div>
+            <label>Confirm Password</label><br/>
+            <input type="password" id="cpass" value="" placeholder="Re-enter password"><br/>
+            <span id="cpspan"></span>
+           </div>
+           <br />
+<div>
+    <label>Date Of Birth</label><br/>
+    <input type="date" id="dob" value="" onchange="return displayAge()"><br/>
+    <span id="dobspan"></span>
+</div>
+<br />
+<div>
+    <label>Age</label><br/>
+    <input type="text" id="age" value="" placeholder="Calculated automatically"><br/>
+    <span id="aspan"></span>
+</div>
+<br />
+<div>
+    <label>Address</label><br/>
+    <textarea id="address" value="" placeholder="Enter address"></textarea><br/>
+    <span id="addspan"></span>
+</div>
+<br />
+<div>
+    <label>Pincode</label><br/>
+    <input type="text" id="pincode" value="" placeholder="Enter pincode"><br/>
+    <span id="pinspan"></span>
+</div>
+<br /><br /><br />
+
+
+
+
+
+            <button type="submit"><b>Submit</b></button>
+            </form>
+        </div>
+
+        <div class="perDeets">
+            <b>Urmika Bhattacharya 18BCE0974</b>
+            </div>
+
+<script type="text/javascript">
+
+function displayAge(){
+    var dob = document.getElementById("dob").value;
+//age
+var today = new Date();
+var birthDate = new Date(dob);
+
+var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age = age - 1;
+    }
+    if(age<0)age=0;
+    
+document.getElementById("age").value=age;
+}
+
+formValidate = () => {
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var email = document.getElementById("email").value;
+    var phoneNo = document.getElementById("phone").value;
+    var dob = document.getElementById("dob").value;
+    var password = document.getElementById("pass").value;
+    var cpassword = document.getElementById("cpass").value;
+    var pincode = document.getElementById("pincode").value;
+    var address = document.getElementById("address").value;
+
+    var formIsValid = true;
+
+    //regex
+    //var eregex = new RegExp("^[\w.+\-]+@gmail\.com$");
+    var eregex = new RegExp("^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$");
+    var lregex = new RegExp("^(\.[A-Z]{1})+$");
+    var pinregex  = new RegExp("[0-9]{6}")
+
+    //console.log(fname,lname,email,phoneNo,dob);
+
+    //fname
+    if(fname=="")
+    {
+        document.getElementById("fspan").innerHTML="firstname cannot be empty";
+        formIsValid = false;
+    }
+    if(fname.length>20 || fname.length<2 )
+    {
+        document.getElementById("fspan").innerHTML="firstname length should be between 2 and 20!";
+        formIsValid = false;
+    }
+
+    //lname
+    if(lname=="")
+    {
+        document.getElementById("lspan").innerHTML="lastname cannot be empty"
+        formIsValid = false;
+    }
+    else if(lregex.test(lname)==false)
+    {
+        document.getElementById("lspan").innerHTML="lastname should be of form .K or .K.N ";
+        formIsValid = false;
+    }
+
+//console.log("eregex.test = "+eregex.test(email))
+    //email
+    if(email=="")
+    {
+        document.getElementById("espan").innerHTML = "email cannot be empty!";
+        formIsValid = false;
+    }
+    else if(eregex.test(email)==false)
+    {
+        document.getElementById("espan").innerHTML = "email should be of gmail"; 
+        formIsValid = false;  
+    }
+
+    //phoneNumber
+    if(phoneNo=="")
+    {
+        document.getElementById("pnspan").innerHTML = "Phone No cannot be empty";
+        formIsValid = false;
+    }
+    else if(phoneNo.length!=10)
+    {
+        document.getElementById("pnspan").innerHTML = "Phone no should be 10 digits long";
+        formIsValid = false;
+    }
+    
+    //dob
+    //console.log((new Date(dob)).getFullYear())
+    if(dob=="")
+    {
+        document.getElementById("dobspan").innerHTML = "DOB cannot be empty";
+        formIsValid = false;
+    }
+    else if((new Date(dob)).getFullYear()>2020){
+        document.getElementById("dobspan").innerHTML = "DOB cannot be after 2020";
+        formIsValid = false;
+    }
+
+    //password
+    if(password=="")
+    {
+        document.getElementById("pspan").innerHTML = "Password cannot be empty";
+        formIsValid = false;
+    }
+    else if(password.length<8)
+    {
+        document.getElementById("pspan").innerHTML = "Password should have length greater than 8";
+        formIsValid = false;
+    }
+
+    if(cpassword=="")
+    {
+        document.getElementById("cpspan").innerHTML = "Please confirm your password";
+        formIsValid = false;
+    }
+    else if(cpassword!=password)
+    {
+        document.getElementById("cpspan").innerHTML = "password doesnt match!";
+        formIsValid = false;
+    }
+
+    //address
+    if(address=="")
+    {
+        document.getElementById("addspan").innerHTML - "address cannot be empty";
+        formIsValid = false;
+    }
+
+    //pincode
+    if(pincode=="")
+    {
+        document.getElementById("pinspan").innerHTML = "pincode should not be empty";
+        formIsValid = false;
+    }
+    else if(pinregex.test(pincode)==false)
+    {
+        document.getElementById("pinspan").innerHTML = "pincode should be 6 digits";
+        formIsValid = false;   
+    }
+
+    if(formIsValid==true){
+        alert("Form submitted succesfully!");
+    }
+
+}
+
+
+
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VIT HACK</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="formstyle.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">VIT  HACK</h1>
+            <h2 id="title">Register Now!</h2>
+            <video controls="controls" 
+       class="video-stream" 
+       x-webkit-airplay="allow" 
+       data-youtube-id="N9oxmRT2YWw" 
+       src="usingthis.mp4"
+       width="30%"
+       height="auto"
+       ></video>
+
+        </header>
+        <form action="/" method="POST" >
+            <!--all form elements filled
+            minimum max length
+            type of feild
+            -->
+
+            <div>
+            <label>Name: </label><br/>
+            <input type="text" required minlength=2 maxlength=30><br/>
+            </div>
+
+            <div>
+                <label>E-mail: </label><br/>
+                <input type="email" required><br/>
+                </div>
+
+                <div>
+                    <label>Phone: </label><br/>
+                    <input type="tel" required><br/>
+                    </div>
+             <div>
+            <label>Age: </label><br/>
+            <input type="number" required min=15 max=100><br/>
+            </div>                
+            <div class="radio">
+            <label>Gender: </label><br/>
+            <input type="radio" id="male" name="gender" value="male">
+            <label class="radio-label" >Male</label><br />
+            <input type="radio" id="female" name="gender" value="female">
+            <label class="radio-label">Female</label><br />
+            <input type="radio" id="other" name="gender" value="other">
+            <label class="radio-label">Other</label><br />
+            </div>
+            <div class="checkbox">
+            <label>Technologies you use: </label><br/>
+            <input type="checkbox">
+            <label class="checkbox-label">Front-end web developer</label><br/>
+            <input type="checkbox">
+            <label class="checkbox-label">Back-end web developer</label><br/>
+            <input type="checkbox">
+            <label class="checkbox-label">Full stack web developer</label><br/>
+            <input type="checkbox">
+            <label class="checkbox-label">Data Scientist</label><br/>
+            <input type="checkbox">
+            <label class="checkbox-label">Blockchain</label><br/>
+            </div>
+            <div class="profession">
+                <label for="Profession">Profession: </label><br />
+                <select id="dropdown" class="dropdown" required>
+                <option disable value id="disable">Select an option</option>
+                <option value="Student">Student</option>
+                <option value="parttime">Part time Job</option>
+                <option value="fulltime">Full time Job</option>
+                <option value="other">Other</option>
+                </select>
+                <br>
+            </div>
+            <div class="textarea">
+                <label>Tell us about yourself: </label><br/>
+                <textarea 
+                placeholder="Tell us about yourself.." 
+                style="height:150px;resize:vertical;" 
+                name="suggestion"
+                required
+                >
+            </textarea>
+            </div>
+            <button id="reset" type="reset">
+                Reset
+            </button>
+            <button id="submit" type="submit">
+                Submit
+            </button>
+        </form>
+        <div class="credits">
+            <h3>Mitanshi Kshatriya 18BCE0540</h3>
+        </div>
+    </body>
+</html>

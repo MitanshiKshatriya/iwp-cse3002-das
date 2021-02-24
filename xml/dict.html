@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    
+    <title>Thesaurus</title>
+</head>
+<body  class="container bg-light">
+    
+    <br>
+
+    <h1>Thesaurus powered by <span class="badge badge-secondary">XML</span></h1>
+
+
+
+
+    
+        <div>
+          <label>Word you want to find: </label> 
+          <input id="word" class="form-control" style="width:auto; display:inline;" type="text" aria-describedby="emailHelp">
+          <button  class="btn btn-secondary" onClick="return getfromXML(this)">Submit</button>
+        </div>
+        
+        
+       
+      
+      <div id="demo" style="font-size: 1.3rem;"></div>
+
+    <script>
+  //let searchword = "extraterrstial";     
+  let list_of_words,word,antonym,synonym,render,searchword;
+
+function getfromXML(obj)
+{
+searchword = document.getElementById("word").value;
+fetch("dict.xml")
+.then(res=>res.text())
+.then((data)=>{
+    let parser = new DOMParser();
+    let xml = parser.parseFromString(data,"text/xml")
+    console.log(xml)
+
+    list_of_words = xml.getElementsByTagName("wordgroup");
+    //console.log(typeof(list_of_words),list_of_words.length)
+    console.log(list_of_words)
+    for(i = 0; i<list_of_words.length;i++)
+    {
+       word = list_of_words[i].attributes[0].value;
+       //console.log(word)
+       if(searchword==word)
+       {
+        antonym = list_of_words[i].children[1].innerHTML;
+        synonym = list_of_words[i].children[0].innerHTML;
+        //console.log(antonym,synonym)
+        render = `<p>
+        <label> Synonym: </label>
+        <span class="badge badge-success">${synonym}</span>
+        </p>
+        <p>
+        <label>Antonym: </label>
+        <span class="badge badge-danger">${antonym}</span>
+        </p>
+        
+        `
+        document.getElementById("demo").innerHTML = render;
+        break;
+       }
+       
+        render = `<p>
+        
+        <span class="badge badge-secondary">Word not found!</span>
+        </p>
+        `
+        document.getElementById("demo").innerHTML = render;
+    }
+
+    
+})
+
+}
+
+        
+    </script>
+</body>
+</html>

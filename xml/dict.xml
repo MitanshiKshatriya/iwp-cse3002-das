@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wordgroups xmlns="http://www.w3.org/2001/XMLSchema-instance" 
+
+>
+  <wordgroup aid="sad">
+    <synonym>gloomy</synonym>
+    <antonym>happy</antonym>
+  </wordgroup>
+  <wordgroup aid="hell">
+    <synonym>abyss</synonym>
+    <antonym>heaven</antonym>
+  </wordgroup>
+   <wordgroup aid="dumb">
+    <synonym>stupid</synonym>
+    <antonym>smart</antonym>
+  </wordgroup>
+     <wordgroup aid="ideal">
+    <synonym>perfect</synonym>
+    <antonym>flawed</antonym>
+  </wordgroup>
+    <wordgroup aid="brave">
+    <synonym>fearless</synonym>
+    <antonym>cowardely</antonym>
+  </wordgroup>
+</wordgroups>

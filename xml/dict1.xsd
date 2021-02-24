@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.w3schools.com"
+xmlns="https://www.w3schools.com"
+elementFormDefault="qualified">
+
+<xs:element name="wordgroups">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="wordgroup"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="wordgroup">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="synonym" type="xs:string"/>
+      <xs:element name="antonym" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="aid" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
