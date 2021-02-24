@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>
+            Cricket Map
+        </title>
+        <style>
+            body{
+                overflow-x: hidden;
+            }
+            iframe{
+                width:500px;
+            }
+            #wk{
+                position: absolute;
+                top:0;
+                right:auto; 
+                visibility: hidden;
+            }
+            #fl{
+                position: absolute;
+                top:0;
+                right:auto;
+                visibility: hidden;
+            }
+            #sl{
+                position: absolute;
+                top:0;
+                right:auto;
+                visibility: hidden;
+            }
+            #mw{
+
+                position: absolute;
+                top:0;
+                right:auto;
+                visibility: hidden;
+
+            }
+            #tm{
+
+position: absolute;
+top:0;
+right:auto;
+visibility: hidden;
+
+
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Fielding Positions</h1>
+    <p>Positions included - wicket keeper,fine leg,square leg,mid-wicket,thirdman</p>
+    <p>Made by Mitanshi Kshatriya 18BCE0540</p>
+        <img src="ground.PNG" alt="fielding position" usemap="#workmap">
+
+<map name="workmap">
+
+  <area shape="circle" coords="277,240,20" alt="wicket keeper" href="wk.html" target="wk"
+  onClick="
+  document.getElementById('wk').style.visibility='visible';
+        document.getElementById('fl').style.visibility='hidden'
+        document.getElementById('sl').style.visibility='hidden'
+        document.getElementById('mw').style.visibility='hidden'
+        document.getElementById('tm').style.visibility='hidden' 
+  "
+  >
+  <area shape="circle" coords="484,163,20" alt="Fine leg" href="fl.html" target="fl"
+  onclick="
+   document.getElementById('wk').style.visibility='hidden';
+        document.getElementById('fl').style.visibility='visible'
+        document.getElementById('sl').style.visibility='hidden'
+        document.getElementById('mw').style.visibility='hidden' 
+        document.getElementById('tm').style.visibility='hidden'
+  "
+  >
+  <area shape="circle" coords="394,229,20" alt="Square Leg" href="sl.html" target="sl"
+  onclick="
+  document.getElementById('wk').style.visibility='hidden';
+        document.getElementById('fl').style.visibility='hidden'
+        document.getElementById('sl').style.visibility='visible'
+        document.getElementById('mw').style.visibility='hidden' 
+        document.getElementById('tm').style.visibility='hidden'
+  "
+  >
+  <area shape="circle" coords="396,284,20" alt="mid-wicket" href="mw.html" target="mw"
+  onclick="
+  document.getElementById('wk').style.visibility='hidden';
+        document.getElementById('fl').style.visibility='hidden'
+        document.getElementById('sl').style.visibility='hidden'
+        document.getElementById('mw').style.visibility='visible' 
+        document.getElementById('tm').style.visibility='hidden'
+  "
+  >
+  <area shape="circle" coords="100,122,20" alt="third man" href="tm.html" target="tm"
+  onclick="
+  document.getElementById('wk').style.visibility='hidden';
+        document.getElementById('fl').style.visibility='hidden'
+        document.getElementById('sl').style.visibility='hidden'
+        document.getElementById('mw').style.visibility='hidden' 
+        document.getElementById('tm').style.visibility='visible'
+  "
+  >
+</map>
+
+<iframe id="wk" name="wk" src="wk.html" width="1200" height="620" frameborder="0"></iframe>
+<iframe id="fl" name="fl" src="fl.html" width="1200" height="620" frameborder="0"></iframe>
+<iframe id="sl" name="sl" src="sl.html" width="1200" height="620" frameborder="0"></iframe>
+<iframe id="mw" name="mw" src="mw.html" width="1200" height="620" frameborder="0"></iframe>
+<iframe id="tm" name="tm" src="tl.html" width="1200" height="620" frameborder="0"></iframe>
+<script>
+    function wk(){
+        document.getElementById('wk').style.visibility='visible';
+        document.getElementById('fl').style.visibility='hidden'
+        document.getElementById('sl').style.visibility='hidden'
+        document.getElementById('mw').style.visibility='hidden' 
+    }
+    function fl(){
+        document.getElementById('wk').style.visibility='hidden';
+        document.getElementById('fl').style.visibility='visible'
+        document.getElementById('sl').style.visibility='hidden'
+        document.getElementById('mw').style.visibility='hidden'  
+    }
+    function sl(){
+        document.getElementById('wk').style.visibility='hidden';
+        document.getElementById('fl').style.visibility='hidden'
+        document.getElementById('sl').style.visibility='visible'
+        document.getElementById('mw').style.visibility='hidden' 
+    }
+    function mw(){
+        document.getElementById('wk').style.visibility='hidden';
+        document.getElementById('fl').style.visibility='hidden'
+        document.getElementById('sl').style.visibility='hidden'
+        document.getElementById('mw').style.visibility='visible' 
+    }
+</script>
+    </body>
+</html>
