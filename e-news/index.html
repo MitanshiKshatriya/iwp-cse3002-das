@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>E-news App</title>
+    <style>
+      #next-article{
+        margin-top:20px;
+      }
+      body{
+        margin:0% 10%;
+      }
+      #credits{
+        position: fixed;
+        bottom: 10px;
+      }
+      .add-news{
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body class="bg-dark text-light">
+    <h1>Get news by date!</h1>
+<div class="add-news">
+  <div class="news-articles text-dark">
+    <div class="card" style="width: 30rem; display: block;">
+      <img class="card-img-top" src="" alt="Card image cap" id="image"
+      style="height:218px"
+      >
+      <div class="card-body">
+        <h5 class="card-title" id="title"></h5>
+        <p class="card-text">
+          <span class="text-muted" id="author"></span>
+          <span class="text-muted" id="date"></span>
+        </p>
+        <p class="card-text" id="description"></p>
+        <a href="#" class="btn btn-primary" id="url">View article</a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="add">
+    <img src="" alt="add displayed here" id="add-img">
+  </div>
+</div>
+
+<button class="btn btn-primary" id="next-article">Next article</button> 
+<div class="text-warning" id="credits">Made by Mitanshi Kshatriya 18BCE0540</div>
+    <script type="application/javascript" src="index.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
